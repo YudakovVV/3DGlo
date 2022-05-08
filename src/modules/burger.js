@@ -1,7 +1,6 @@
-const burgerModule = () => {
-    const burger = 'my menu'
-
-    console.log(burger)
+const burgerModule = ()=>{
+  const burger = 'my menu';
+  console.log(burger);
+  
 }
-
-export default burgerModule
+export default burgerModule;
