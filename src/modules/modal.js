@@ -30,7 +30,7 @@ const modal = () =>{
       modal.style.display = 'block' 
       if (window.screen.availWidth > 767) {
             animate({
-                duration: 500,
+                duration: 300,
                 timing(timeFraction) {
                     return timeFraction
                 },
