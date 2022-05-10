@@ -1,11 +1,7 @@
-import burger from './modules/burger'
-import sliderOne from './modules/slider'
-import sliderTwo from './modules/badScript'
 import timer from './modules/timer'
-import twoModule from './modules/two'
+import menu from './modules/menu'
+import modal from './modules/modal'
 
-burger()
-sliderOne()
-sliderTwo()
 timer('20 may 2022')
-twoModule()
+menu()
+modal()
