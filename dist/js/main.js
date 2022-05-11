@@ -16,7 +16,27 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n\r\n\r\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('20 may 2022')\r\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n;(0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/calculator */ \"./modules/calculator.js\");\n/* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/forms */ \"./modules/forms.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('20 may 2022')\r\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n;(0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n;(0,_modules_calculator__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()\r\n;(0,_modules_forms__WEBPACK_IMPORTED_MODULE_4__[\"default\"])({\r\n    textSelector: '#form1-name',\r\n    phoneSelector: '#form1-phone',\r\n    emailSelector: '#form1-email',\r\n    placeholderSelector: null\r\n})\r\n;(0,_modules_forms__WEBPACK_IMPORTED_MODULE_4__[\"default\"])({\r\n    textSelector: '#form2-name',\r\n    phoneSelector: '#form2-phone',\r\n    emailSelector: '#form2-email',\r\n    placeholderSelector: '#form2-message'\r\n})\r\n;(0,_modules_forms__WEBPACK_IMPORTED_MODULE_4__[\"default\"])({\r\n    textSelector: '#form3-name',\r\n    phoneSelector: '#form3-phone',\r\n    emailSelector: '#form3-email',\r\n    placeholderSelector: null\r\n})\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/calculator.js":
+/*!*******************************!*\
+  !*** ./modules/calculator.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst calculator = () => {\r\n  const calcSquare = document.querySelector('.calc-square')\r\n  const calcCount = document.querySelector('.calc-count')\r\n  const calcDay = document.querySelector('.calc-day')\r\n  \r\ncalcSquare.addEventListener(\"input\", (e) => {\r\n  e.target.value = e.target.value.replace(/\\D+/, \"\"); \r\n});\r\ncalcCount.addEventListener(\"input\", (e) => {\r\n  e.target.value = e.target.value.replace(/\\D+/, \"\"); \r\n});\r\ncalcDay.addEventListener(\"input\", (e) => {\r\n  e.target.value = e.target.value.replace(/\\D+/, \"\"); \r\n});\r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calculator);\n\n//# sourceURL=webpack:///./modules/calculator.js?");
+
+/***/ }),
+
+/***/ "./modules/forms.js":
+/*!**************************!*\
+  !*** ./modules/forms.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst forms = ({\r\n    textSelector,\r\n    phoneSelector,\r\n    emailSelector,\r\n    placeholderSelector\r\n}) => {\r\n    const textInput = document.querySelector(textSelector)\r\n    const phoneInput = document.querySelector(phoneSelector)\r\n    const emailInput = document.querySelector(emailSelector)\r\n\r\n    const validText = function (e) {\r\n        this.value = e.target.value.replace(/\\d+/gi, '')\r\n    }\r\n\r\n    textInput.addEventListener('input', validText)\r\n    phoneInput.addEventListener('input', (e) => {\r\n        phoneInput.value = e.target.value.replace(/[^0-9-()+]/gi, '')\r\n    })\r\n    emailInput.addEventListener('input', (e) => {\r\n        emailInput.value = e.target.value.replace(/[^a-zA-Z.@~*!'_-]/gi, '')\r\n    })\r\n\r\n    if (typeof placeholderSelector === 'string') {\r\n        const placeholderInput = document.querySelector(placeholderSelector)\r\n        placeholderInput.addEventListener('input', validText)\r\n    }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (forms);\n\n//# sourceURL=webpack:///./modules/forms.js?");
 
 /***/ }),
 
