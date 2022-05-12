@@ -21,6 +21,12 @@ const menu = () => {
     //     menuItems[i].addEventListener('click', handleMenu)
     // }
     menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu))
+
+    // menu.addEventListener('click',(e)=>{
+    //     if(!e.target.closest('.menu') || e.target.classList.contains('close-btn')){
+    //   menu.style.display = 'none'
+    // }
+    // })
 }
 
 export default menu
