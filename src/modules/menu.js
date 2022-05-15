@@ -29,22 +29,8 @@ const menu = () => {
         {
           menu.classList.toggle('active-menu')=== false
         }
-        menuItems.forEach(menuItem => menuItem.classList.toggle('ul>li>a'))
-        // e.target.classList.contains('closeBtn')
-        // closeBtn.addEventListener('click', handleMenu)
-        // menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu))
-        // e.target.closest('.close-btn')
-        // for(let i=0; i < menuItems.length; i++){
-        // menuItems[i].matches('handleMenu')
-    // }
-    }
-    )
-
-//     modal.addEventListener('click',(e)=>{
-//     if(!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')){
-//       modal.style.display = 'none'
-//     }
-//   })
+        menuItems.forEach(menuItem => menuItem.classList.toggle('ul>li>a'))        
+    })
 }
 
 export default menu
