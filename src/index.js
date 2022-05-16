@@ -9,7 +9,7 @@ import slider from './modules/slider'
 timer('20 may 2022')
 menu()
 modal()
-calculator()
+calculator(100)
 forms({
     textSelector: '#form1-name',
     phoneSelector: '#form1-phone',
