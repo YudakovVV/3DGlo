@@ -43,14 +43,14 @@ const calculator = (price = 100) => {
     
   })
   
-calcSquare.addEventListener("input", (e) => {
-  e.target.value = e.target.value.replace(/\D+/, ""); 
-});
-calcCount.addEventListener("input", (e) => {
-  e.target.value = e.target.value.replace(/\D+/, ""); 
-});
-calcDay.addEventListener("input", (e) => {
-  e.target.value = e.target.value.replace(/\D+/, ""); 
-});
+// calcSquare.addEventListener("input", (e) => {
+//   e.target.value = e.target.value.replace(/\D+/, ""); 
+// });
+// calcCount.addEventListener("input", (e) => {
+//   e.target.value = e.target.value.replace(/\D+/, ""); 
+// });
+// calcDay.addEventListener("input", (e) => {
+//   e.target.value = e.target.value.replace(/\D+/, ""); 
+// });
 }
 export default calculator
