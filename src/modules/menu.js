@@ -1,36 +1,48 @@
 const menu = () => {
     const menuBtn = document.querySelector('.menu')
     const menu = document.querySelector('menu')
-    const closeBtn = menu.querySelector('.close-btn')
-    const menuItems = menu.querySelectorAll('ul>li>a')
-    
-    const handleMenu = ()=>{
-    //     if(!menu.style.transform){
-    //         menu.style.transform = 'translateX(0)'
-    //     }
-    //     else {
-    //         menu.style.transform = ''
-    //     }
-        menu.classList.toggle('active-menu')        
+    // const menuItems = menu.querySelectorAll('ul>li>a')
+
+    const handleMenu = () => {
+        menu.classList.toggle('active-menu')
     }
-    
-    
+
     menuBtn.addEventListener('click', handleMenu)
-    // closeBtn.addEventListener('click', handleMenu)
 
-    // // for(let i=0; i < menuItems.length; i++){
-    // //     menuItems[i].addEventListener('click', handleMenu)
-    // // }
-    // menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu))
-
-    menu.addEventListener('click',(e)=>{
-        
-        if(!e.target.classList.contains('active-menu') )
-        {
-          menu.classList.toggle('active-menu')=== false
+    menu.addEventListener('click', (e) => {
+        if (e.target.hash === '#close') {
+            e.preventDefault()
         }
-        menuItems.forEach(menuItem => menuItem.classList.toggle('ul>li>a'))        
+        const menuHash = [
+            '#close',
+            '#service-block',
+            '#portfolio',
+            '#calc',
+            '#command',
+            '#connect',
+        ]
+        if (menuHash.includes(e.target.hash)) {
+            menu.classList.toggle('active-menu')
+        }
     })
+
+    const move = () => {
+        const topMenu = document.querySelector('ul');
+        topMenu.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target.matches("a")) {
+                event.preventDefault();
+                const thisEl = document.querySelector(target.getAttribute("href"));
+                console.log(target.getAttribute("href"));
+                console.log(thisEl);
+                thisEl.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        });
+    };
+    move();
 }
 
 export default menu
