@@ -45,6 +45,7 @@ const sendForm = ({formId, someElem = []}) =>{
     const formData = new FormData(form)
     const formBody = {}
 
+    
     statusBlock.textContent = loadText        
     form.append(statusBlock) 
     setTimeout(() => {
