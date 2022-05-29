@@ -1,6 +1,8 @@
 const sendForm = ({formId, someElem = []}) =>{
   const form = document.getElementById(formId)  
   const statusBlock = document.createElement('div')
+  const popupBlock = document.querySelector('.popup')
+  statusBlock.style.color = 'white'
   const loadText = 'Загрузка...'
   const errorText = 'Ошибка ...'
   const successText = 'Спасибо! Наш менеджер с вами свяжется'
@@ -8,15 +10,30 @@ const sendForm = ({formId, someElem = []}) =>{
 
   const validate = (list) =>{
     let success = true
-    //добавить валидацию через регулярки
-    
     return success
   }
 
   const sendData = (data) => {
+    const payload = {}
+        if (data.user_email !== '') {
+            payload['user_email'] = data.user_email
+        }
+        if (data.user_phone !== '') {
+            payload['user_phone'] = data.user_phone
+        }
+        if (data.user_name !== '') {
+            payload['user_name'] = data.user_name
+        }
+        if (data.total !== '0') {
+            payload['total'] = data.total
+        }
+        if (data.user_message !== '') {
+            payload['user_message'] = data.user_message
+        }
+
     return fetch('https://jsonplaceholder.typicode.com/posts',{
       method:'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
       headers: {
         "Content-Type": "aplication/json"
       }
@@ -28,8 +45,11 @@ const sendForm = ({formId, someElem = []}) =>{
     const formData = new FormData(form)
     const formBody = {}
 
-    statusBlock.textContent = loadText
+    statusBlock.textContent = loadText        
     form.append(statusBlock) 
+    setTimeout(() => {
+          statusBlock.remove()
+        }, 3000)
 
     formData.forEach((val,key)=>{
       formBody[key] = val
@@ -56,6 +76,9 @@ const sendForm = ({formId, someElem = []}) =>{
         formElements.forEach(input => {
           input.value = ''
         })
+        setTimeout(() => {
+          popupBlock.style.display = 'none'
+        }, 3000)
       })
       .catch(error => {
         statusBlock.textContent = errorText

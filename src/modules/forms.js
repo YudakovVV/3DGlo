@@ -7,6 +7,7 @@ const forms = ({
     const textInput = document.querySelector(textSelector)
     const phoneInput = document.querySelector(phoneSelector)
     const emailInput = document.querySelector(emailSelector)
+    
 
     const validText = function (e) {
         this.value = e.target.value.replace(/\d+/gi, '')

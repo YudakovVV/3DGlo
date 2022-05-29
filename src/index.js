@@ -7,7 +7,7 @@ import tabs from './modules/tabs'
 import slider from './modules/slider'
 import sendForm from './modules/sendForm'
 
-timer('30 may 2022')
+timer('10 june 2022')
 menu()
 modal()
 calculator(100)
@@ -33,8 +33,28 @@ tabs()
 slider()
 sendForm({
     formId:'form1', 
-    someElem: [{
+    someElem: [
+        {
         type: 'block',
         id: 'total'
-    }]
+        }
+    ]
+})
+sendForm({
+    formId: 'form3',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+})
+sendForm({
+    formId: 'form2',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
 })
