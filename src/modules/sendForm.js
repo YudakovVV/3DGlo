@@ -46,7 +46,12 @@ const sendForm = ({formId, someElem = []}) =>{
     const formBody = {}
 
     
-    statusBlock.textContent = loadText        
+    statusBlock.textContent = loadText 
+    // AmagiLoader.show();
+    //     setTimeout(() => {
+    //     AmagiLoader.hide();
+    // }, 3000);
+          
     form.append(statusBlock) 
     setTimeout(() => {
           statusBlock.remove()
@@ -88,6 +93,7 @@ const sendForm = ({formId, someElem = []}) =>{
         alert('Данные не валидны!!!')
       }
   }
+ 
 
   try {
     if(!form){
