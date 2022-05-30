@@ -10,7 +10,7 @@ const forms = ({
     
 
     const validText = function (e) {
-        this.value = e.target.value.replace(/\d+/gi, '')
+        this.value = e.target.value.replace(/[^А-Яа-яёЁ]/gi, '')
     }
 
     textInput.addEventListener('input', validText)
